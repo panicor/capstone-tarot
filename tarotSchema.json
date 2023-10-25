@@ -1,6 +1,5 @@
 {
-  "definitions": {},
-  "$schema": "http://json-schema.org/2020-12/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/tarot.schema.json",
   "type": "object",
   "title": "Tarot Schema",
@@ -12,7 +11,8 @@
     "img",
     "fortune_telling",
     "keywords",
-    "meanings",
+    "meanings-light",
+    "meanings-shadow",
     "Archetype",
     "Hebrew Alphabet",
     "Numerology",
@@ -20,128 +20,129 @@
     "Mythical/Spiritual",
     "Questions to Ask"
   ],
-  "properties": {
-    "name": {
-      "$id": "#/properties/name",
-      "type": "string",
-      "title": "The Name Schema",
-      "default": "",
-      "examples": ["The Fool"],
-      "pattern": "^(.*)$"
-    },
-    "number": {
-      "$id": "#/properties/number",
-      "type": "string",
-      "title": "The Number Schema",
-      "default": "",
-      "examples": ["0"],
-      "maxLength:": 2,
-      "maximum": 21,
-      "pattern": "^(.*)$"
-    },
-    "arcana": {
-      "$id": "#/properties/arcana",
-      "type": "string",
-      "title": "The Arcana Schema",
-      "default": "",
-      "examples": ["Major Arcana"],
-      "pattern": "^(.*)$"
-    },
-    "suit": {
-      "$id": "#/properties/suit",
-      "type": "string",
-      "title": "The Suit Schema",
-      "default": "",
-      "examples": ["Cups"],
-      "pattern": "^(.*)$"
-    },
-    "img": {
-      "$id": "#/properties/img",
-      "type": "string",
-      "title": "The Image Schema",
-      "default": "",
-      "examples": ["m00.jpg"],
-      "pattern": "^(.*)$"
-    },
-    "fortune_telling": {
-      "$id": "#/properties/fortune_telling",
-      "type": "array",
-      "title": "The Fortune Telling Schema",
-      "default": "",
-      "examples": ["Watch for new projects and new beginnings"],
-      "pattern": "^(.*)$"
-    },
-    "keywords": {
-      "$id": "#/properties/keywords",
-      "type": "array",
-      "title": "The Keywords Schema",
-      "default": "",
-      "examples": ["freedom"],
-      "pattern": "^(.*)$"
-    },
-    "meanings-light": {
-      "$id": "#/properties/meanings-light",
-      "type": "array",
-      "title": "The Light Meanings Schema",
-      "default": "",
-      "examples": ["Being open-minded"],
-      "pattern": "^(.*)$"
-    },
-    "meanings-shadow": {
-        "$id": "#/properties/meanings-dark",
+
+    "properties": {
+      "name": {
+        "$id": "#/properties/name",
+        "type": "string",
+        "title": "The Name Schema",
+        "default": "",
+        "examples": ["The Fool"],
+        "pattern": "^(.*)$"
+      },
+      "number": {
+        "$id": "#/properties/number",
+        "type": "string",
+        "title": "The Number Schema",
+        "default": "",
+        "examples": ["0"],
+        "maxLength:": 2,
+        "maximum": 21,
+        "pattern": "^(.*)$"
+      },
+      "arcana": {
+        "$id": "#/properties/arcana",
+        "type": "string",
+        "title": "The Arcana Schema",
+        "default": "",
+        "examples": ["Major Arcana"],
+        "pattern": "^(.*)$"
+      },
+      "suit": {
+        "$id": "#/properties/suit",
+        "type": "string",
+        "title": "The Suit Schema",
+        "default": "",
+        "examples": ["Cups"],
+        "pattern": "^(.*)$"
+      },
+      "img": {
+        "$id": "#/properties/img",
+        "type": "string",
+        "title": "The Image Schema",
+        "default": "",
+        "examples": ["m00.jpg"],
+        "pattern": "^(.*)$"
+      },
+      "fortune_telling": {
+        "$id": "#/properties/fortune_telling",
         "type": "array",
-        "title": "The Dark Meanings Schema",
+        "title": "The Fortune Telling Schema",
+        "default": "",
+        "examples": ["Watch for new projects and new beginnings"],
+        "pattern": "^(.*)$"
+      },
+      "keywords": {
+        "$id": "#/properties/keywords",
+        "type": "array",
+        "title": "The Keywords Schema",
+        "default": "",
+        "examples": ["freedom"],
+        "pattern": "^(.*)$"
+      },
+      "meanings-light": {
+        "$id": "#/properties/meanings-light",
+        "type": "array",
+        "title": "The Light Meanings Schema",
+        "default": "",
+        "examples": ["Being open-minded"],
+        "pattern": "^(.*)$"
+      },
+      "meanings-shadow": {
+        "$id": "#/properties/meanings-shadow",
+        "type": "array",
+        "title": "The Shadow Meanings Schema",
         "default": "",
         "examples": ["Being silly or distracted"],
         "pattern": "^(.*)$"
       },
-    "Archetype": {
-      "$id": "#/properties/archetype",
-      "type": "string",
-      "title": "The Archetype Schema",
-      "default": "",
-      "examples": ["The Divine Madman"],
-      "pattern": "^(.*)$"
-    },
-    "Hebrew Alphabet": {
-      "$id": "#/properties/hebrew_alphabet",
-      "type": "string",
-      "title": "The Hebrew Alphabet Schema",
-      "default": "",
-      "examples": ["Aleph/Ox/1"],
-      "pattern": "^(.*)$"
-    },
-    "Numerology": {
-      "$id": "#/properties/numerology",
-      "type": "string",
-      "title": "The Numerology Schema",
-      "default": "",
-      "examples": ["0 (off the scale; pure potential)"],
-      "pattern": "^(.*)$"
-    },
-    "Elemental": {
-      "$id": "#/properties/elemental",
-      "type": "string",
-      "title": "The Elemental Schema",
-      "default": "",
-      "examples": ["Air"],
-      "pattern": "^(.*)$"
-    },
-    "Mythical/Spiritual": {
-      "$id": "#/properties/mythical_spiritual",
-      "type": "string",
-      "title": "The Mythical/Spiritual Schema",
-      "default": "",
-      "examples": ["Adam before the fall."],
-      "pattern": "^(.*)$"
-    },
-    "Questions to Ask": {
-      "$id": "#/properties/questions_to_ask",
-      "type": "array",
-      "title": "The Questions to Ask Schema",
-      "default": "",
-      "examples": ["What would I do if I felt free to take a leap?"],
-      "pattern": "^(.*)$"
+      "Archetype": {
+        "$id": "#/properties/archetype",
+        "type": "string",
+        "title": "The Archetype Schema",
+        "default": "",
+        "examples": ["The Divine Madman"],
+        "pattern": "^(.*)$"
+      },
+      "Hebrew Alphabet": {
+        "$id": "#/properties/hebrew_alphabet",
+        "type": "string",
+        "title": "The Hebrew Alphabet Schema",
+        "default": "",
+        "examples": ["Aleph/Ox/1"],
+        "pattern": "^(.*)$"
+      },
+      "Numerology": {
+        "$id": "#/properties/numerology",
+        "type": "string",
+        "title": "The Numerology Schema",
+        "default": "",
+        "examples": ["0 (off the scale; pure potential)"],
+        "pattern": "^(.*)$"
+      },
+      "Elemental": {
+        "$id": "#/properties/elemental",
+        "type": "string",
+        "title": "The Elemental Schema",
+        "default": "",
+        "examples": ["Air"],
+        "pattern": "^(.*)$"
+      },
+      "Mythical/Spiritual": {
+        "$id": "#/properties/mythical_spiritual",
+        "type": "string",
+        "title": "The Mythical/Spiritual Schema",
+        "default": "",
+        "examples": ["Adam before the fall."],
+        "pattern": "^(.*)$"
+      },
+      "Questions to Ask": {
+        "$id": "#/properties/questions_to_ask",
+        "type": "array",
+        "title": "The Questions to Ask Schema",
+        "default": "",
+        "examples": ["What would I do if I felt free to take a leap?"],
+        "pattern": "^(.*)$"
+      }
     }
   }
-}
