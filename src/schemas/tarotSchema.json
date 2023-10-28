@@ -143,6 +143,14 @@
         "default": "",
         "examples": ["What would I do if I felt free to take a leap?"],
         "pattern": "^(.*)$"
+      },
+      "Affirmation": {
+        "$id": "#/properties/affirmation",
+        "type": "string",
+        "title": "The Affirmation Schema",
+        "default": "",
+        "examples": ["I strive to be stable and fair-minded."],
+        "pattern": "^(.*)$"
       }
     }
   }
