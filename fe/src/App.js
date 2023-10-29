@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
-import TarotApi from "./api/api";
+import TarotApi from "../be/api/api";
 
 function App() {
   return (

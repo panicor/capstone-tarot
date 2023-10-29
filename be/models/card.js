@@ -1,5 +1,5 @@
 const db = require("../db");
-const { NotFoundError } = require("../expressError");
+const { NotFoundError } = require("../errors/expressError");
 
 class Card {
 

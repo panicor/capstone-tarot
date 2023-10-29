@@ -1,5 +1,5 @@
 const { Client } = require("pg");
-const { getDatabaseUri } = require("./config");
+const { getDatabaseUri } = require("../config/config");
 
 let db;
 

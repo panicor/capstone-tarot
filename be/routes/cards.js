@@ -1,7 +1,7 @@
 const jsonschema = require("jsonschema");
 
 const express = require("express");
-const { BadRequestError } = require("../expressError");
+const { BadRequestError } = require("../errors/expressError");
 const Card = require("../models/card");
 const tarotSchema = require("../schemas/tarotSchema.json");
 
