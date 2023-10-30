@@ -24,5 +24,5 @@ console.log("---");
 module.exports = {
   SECRET_KEY,
   PORT,
-  getDatabaseUri,
+  getDatabaseUri
 };
