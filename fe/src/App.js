@@ -5,6 +5,8 @@ import TarotApi from "../be/api/api";
 function App() {
   return (
     <div className="App">
+      <Dropdown/>
+      <Deck/>
     </div>
   );
 }
