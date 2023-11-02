@@ -15,11 +15,14 @@ function getDatabaseUri() {
       : process.env.DATABASE_URL || "tarot_db";
 }
 
+const hostname = process.env.HOSTNAME;
+
 console.log("Tarot Config:".green);
 console.log("SECRET_KEY:".yellow, SECRET_KEY);
 console.log("PORT:".yellow, PORT.toString());
 console.log("Database:".yellow, getDatabaseUri());
 console.log("---");
+console.log(hostname);
 
 module.exports = {
   SECRET_KEY,

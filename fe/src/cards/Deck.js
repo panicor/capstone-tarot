@@ -1,94 +1,97 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
+import CardImg from "./CardImg";
 import "./Deck.css";
-import axios from "axios";
+import TarotApi from "../api/api";
 
-let URL = "http://localhost:3001/deck";
+function shuffleArray(array) {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
 
 function Deck() {
-  let [deck, setDeck] = useState(null);
+  //let [cards, setCards] = useState([]);
   let [drawnCard, setDrawnCard] = useState([]);
-  let [shuffling, setShuffling] = useState(false);
+  let [shuffledCards, setShuffledCards] = useState([]);
 
   useEffect(function getDeck() {
     async function getData() {
-      let data = await axios.get(`${URL}/shuffle`);
-      setDeck(data.data);
+      try {
+        const response = await TarotApi.request("/cards/deck");
+        if (response.data) {
+          const data = response.data;
+          shuffleArray(data);
+          setShuffledCards(data);
+        } 
+      } catch (error) {
+        // Handle any errors that may occur during the API request
+        console.error("Error fetching data:", error);
+      }
     }
+
     getData();
   }, []);
 
-  async function draw() {
-    try {
-      let drawResp = await axios.get(`${URL}/draw/`);
+  // useEffect(() => {
+  //   setShuffledCards((prevShuffledCards) => shuffleArray(prevShuffledCards));
+  // }, [shuffledCards]);
 
-      if (drawResp.data.remaining === 0) {
+  async function draw() {
+      if (shuffledCards.length > 0) {
+        const [drawn, ...remaining] = shuffledCards;
+        setDrawnCard(drawn);
+        setShuffledCards(remaining);
+      }
+      else{
         throw new Error("No cards left in deck");
       }
 
-      let card = drawResp.data.cards[0];
-
-      setDrawnCard((d) => [
-        ...d,
-        {
-          id: card.id,
-          name: card.name,
-          image: card.img,
-        },
-      ]);
-    } catch (e) {
-      alert(e);
-    }
-  }
-
-  async function startShuffle() {
-    setShuffling(true);
-
-    try {
-      await axios.get(`${URL}/shuffle/`);
-      setDrawnCard([]);
-    } catch (e) {
-      alert(e);
-    } finally {
-      setShuffling(false);
-    }
-  }
+      // setDrawnCard((d) => [
+      //   ...d,
+      //   {
+      //     id: card.id,
+      //     name: card.name,
+      //     image: card.img,
+      //   },
+      // ]);
+    };
 
   function drawBtn() {
-    if (!deck) {
+    if (!shuffledCards) {
       return null;
     }
 
     return (
         <button
         className="Deck-get"
-        onClick={draw}
-        disabled={shuffling}>
+        onClick={draw}>
             Draw Card
         </button>
     )
   }
 
   function shuffleBtn(){
-    if (!deck) {
+    if (!shuffledCards) {
         return null;
       }
   
       return (
-          <button
-          className="Deck-get"
-          onClick={startShuffle}
-          disabled={shuffling}>
-              Shuffle
-          </button>
-      )
+         <div>
+         <button onClick={() => 
+          setShuffledCards(shuffleArray(shuffledCards))}
+        >Shuffle</button>
+       </div>
+      ) 
   }
 
   return(
     <div className="Deck">
       <div className="Deck-cardarea">{
         drawnCard.map(c => (
-          <Card key={c.id} name={c.name} image={c.img} />
+          <CardImg key={c.id} name={c.name} image={c.img} />
         ))}
       </div>
       {drawBtn()}

@@ -3,7 +3,7 @@ const { NotFoundError } = require("../errors/expressError");
 
 class Card {
 
-  static async get(id) {
+  static async getCard(id) {
     const tarotRes = await db.query(
       `SELECT *
            FROM tarot
@@ -16,6 +16,19 @@ class Card {
     if (!card) throw new NotFoundError(`No card: ${id}`);
 
     return card;
+  }
+  
+  static async getAllCards() {
+    const tarotRes = await db.query(
+      `SELECT *
+           FROM tarot`
+    );
+
+    const cards = tarotRes.rows;
+
+    if (!tarotRes) throw new NotFoundError(`No cards here`);
+
+    return cards;
   }
 }
 

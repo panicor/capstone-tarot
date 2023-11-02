@@ -27,6 +27,7 @@ function Dropdown() {
           </option>
         ))}
       </select>
+      <button>Submit</button>
     </div>
   );
 }

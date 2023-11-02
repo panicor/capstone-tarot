@@ -12,7 +12,11 @@ if (process.env.NODE_ENV === "production") {
   });
 } else {
   db = new Client({
-    connectionString: getDatabaseUri(),
+    host: "localhost",
+    // user: "testing1",
+    port: 5432,
+    // password: "testingpassword1",
+    database: "tarot_db"
   });
 }
 
