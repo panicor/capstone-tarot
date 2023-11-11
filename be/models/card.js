@@ -2,7 +2,6 @@ const db = require("../db/db");
 const { NotFoundError } = require("../errors/expressError");
 
 class Card {
-
   static async getCard(id) {
     const tarotRes = await db.query(
       `SELECT *
@@ -17,17 +16,18 @@ class Card {
 
     return card;
   }
-  
+
   static async getAllCards() {
     const tarotRes = await db.query(
       `SELECT *
            FROM tarot`
     );
 
+    //console.log(tarotRes);
     const cards = tarotRes.rows;
 
     if (!tarotRes) throw new NotFoundError(`No cards here`);
-
+    console.log(cards);
     return cards;
   }
 }

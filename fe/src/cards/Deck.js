@@ -20,18 +20,19 @@ function Deck() {
   useEffect(function getDeck() {
     async function getData() {
       try {
-        const response = await TarotApi.request("/cards/deck");
-        if (response.data) {
-          const data = response.data;
-          shuffleArray(data);
-          setShuffledCards(data);
-        } 
+        const response = await TarotApi.request("cards");
+        console.log(response)
+        if (response) {
+          // shuffleArray(response);
+          setShuffledCards(response);
+        } else {
+          console.error("No data received from the API");
+        }
       } catch (error) {
         // Handle any errors that may occur during the API request
         console.error("Error fetching data:", error);
       }
     }
-
     getData();
   }, []);
 
@@ -40,24 +41,23 @@ function Deck() {
   // }, [shuffledCards]);
 
   async function draw() {
-      if (shuffledCards.length > 0) {
-        const [drawn, ...remaining] = shuffledCards;
-        setDrawnCard(drawn);
-        setShuffledCards(remaining);
-      }
-      else{
-        throw new Error("No cards left in deck");
-      }
+    if (shuffledCards.length > 0) {
+      const [drawn, ...remaining] = shuffledCards;
+      setDrawnCard(drawn);
+      setShuffledCards(remaining);
+    } else {
+      throw new Error("No cards left in deck");
+    }
 
-      // setDrawnCard((d) => [
-      //   ...d,
-      //   {
-      //     id: card.id,
-      //     name: card.name,
-      //     image: card.img,
-      //   },
-      // ]);
-    };
+    // setDrawnCard((d) => [
+    //   ...d,
+    //   {
+    //     id: card.id,
+    //     name: card.name,
+    //     image: card.img,
+    //   },
+    // ]);
+  }
 
   function drawBtn() {
     if (!shuffledCards) {
@@ -65,39 +65,37 @@ function Deck() {
     }
 
     return (
-        <button
-        className="Deck-get"
-        onClick={draw}>
-            Draw Card
-        </button>
-    )
+      <button className="Deck-get" onClick={draw}>
+        Draw Card
+      </button>
+    );
   }
 
-  function shuffleBtn(){
+  function shuffleBtn() {
     if (!shuffledCards) {
-        return null;
-      }
-  
-      return (
-         <div>
-         <button onClick={() => 
-          setShuffledCards(shuffleArray(shuffledCards))}
-        >Shuffle</button>
-       </div>
-      ) 
+      return null;
+    }
+
+    return (
+      <div>
+        <button onClick={() => setShuffledCards(shuffleArray(shuffledCards))}>
+          Shuffle
+        </button>
+      </div>
+    );
   }
 
-  return(
+  return (
     <div className="Deck">
-      <div className="Deck-cardarea">{
-        drawnCard.map(c => (
+      <div className="Deck-cardarea">
+        {drawnCard.map((c) => (
           <CardImg key={c.id} name={c.name} image={c.img} />
         ))}
       </div>
       {drawBtn()}
       {shuffleBtn()}
     </div>
-  )
+  );
 }
 
 export default Deck;

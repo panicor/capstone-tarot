@@ -92,66 +92,6 @@ VALUES (
     '{"How does the issue of control or regulation impact this situation?","What would a compassionate but strict father do?","What needs more control?"}'
 );
 
--- Insert data for The High Priestess
-INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Archetype, Hebrew_Alphabet, Numerology, Elemental, Mythical_Spiritual, Questions_to_Ask)
-VALUES (
-    'The High Priestess',
-    2,
-    'Major Arcana',
-    'Trump',
-    'm02.jpg',
-    '{"A mysterious woman arrives","A sexual secret may surface","Someone knows more than he or she will reveal"}',
-    '{"intuition", "reflection", "purity", "initiation"}',
-    '{"Listening to your feelings and intuitions","Exploring unconventional spirituality","Keeping secrets","Being receptive","Reflecting instead of acting","Observing others","Preserving purity"}',
-    '{"Being aloof","Obsessing on secrets and conspiracies","Rejecting guidance from spirit or intuition","Revealing all","Ignoring gut feelings","Refusing to become involved, even when involvement is appropriate"}',
-    'The Virgin/The Maiden',
-    'Gimel/Camel/3',
-    '2 (division, debate, duality)',
-    'The Moon',
-    '{"The feminine aspect of divinity, particularly when expressed through virginity, as with the Virgin Mary or Isis."}',
-    '{"What might a rebel against tradition do?","What isn''t being said or revealed?","What could be achieved by observing and reflecting?"}'
-);
-
--- Insert data for The Empress
-INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Archetype, Hebrew_Alphabet, Numerology, Elemental, Mythical_Spiritual, Questions_to_Ask)
-VALUES (
-    'The Empress',
-    3,
-    'Major Arcana',
-    'Trump',
-    'm03.jpg',
-    '{"Pregnancy is in the cards","An opportunity to be involved in luxurious sexuality is coming","Beware a tendency toward addiction"}',
-    '{"fertility", "productivity", "ripeness", "nurturing"}',
-    '{"Nurturing yourself and others","Bearing fruit","Celebrating your body","Bearing (literal or figurative) children","Reveling in luxury","Mothering those around you in positive ways","Enjoying your sexuality","Getting things done"}',
-    '{"Overindulging","Being greedy","Smothering someone with attention","Debilitating someone by being overprotective","Inhibiting productivity by obsessing on productivity","Being overcome by addictive behavior"}',
-    'The Mother',
-    'Daleth/Door/4',
-    '3 (expression, productivity, output)',
-    'Venus',
-    '{"Gaia, Mother Earth, Ishtar, Demeter—mature, reproductive female divinity in every form. Also Aphrodite and Turan."}',
-    '{"What would a concerned and capable mother do?","What can I do that would emphasize growth?","How can I celebrate my own sensuality and sexuality?"}'
-);
-
--- Insert data for The Emperor
-INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Archetype, Hebrew_Alphabet, Numerology, Elemental, Mythical_Spiritual, Questions_to_Ask)
-VALUES (
-    'The Emperor',
-    4,
-    'Major Arcana',
-    'Trump',
-    'm04.jpg',
-    '{"A father figure arrives","A new employer or authority figure will give you orders","Expect discipline or correction in the near future"}',
-    '{"authority", "regulation", "direction", "structure"}',
-    '{"Exercising authority","Defining limits","Directing the flow of work","Communicating clear guidelines","Being in control of yourself and others","Tempering aggressive masculinity with wisdom and experience"}',
-    '{"Micromanaging","Crushing the creativity of others with a rigid, iron-fisted approach","Insisting on getting your own way","Assuming a dictatorial mindset","Using overt force to achieve your goals and maintain order"}',
-    'The Father',
-    'He[as]/Window/5, or in some decks, Tzaddi/Fish hook/90',
-    '4 (stability, equality, persistence)',
-    'Mars/Aries',
-    '{"Masculine gods, including the Hebrew God, the Christian God, Allah, and Zeus. Patriarchs (Abraham) and lawgivers (Moses). Vishnu, the Preserver."}',
-    '{"How does the issue of control or regulation impact this situation?","What would a compassionate but strict father do?","What needs more control?"}'
-);
-
 -- Insert data for The Hierophant
 INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Archetype, Hebrew_Alphabet, Numerology, Elemental, Mythical_Spiritual, Questions_to_Ask)
 VALUES (
@@ -539,6 +479,7 @@ VALUES (
     '{"What''s worth celebrating in my life?", "How can I demonstrate my feelings in 
     appropriate ways?", "What can I do to show my partner how I really feel?"}'
 );
+
 INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Numerology, Astrology, Affirmation, Questions_to_Ask)
 VALUES (
     'Four of Cups',
@@ -549,11 +490,11 @@ VALUES (
     '{"A lover is getting restless","Find out what he or she needs, or new opportunities may lure your partner away"}',
     '{"boredom","listlessness","lethargy","stability","ingratitude"}',
     '{"Maintaining your emotional stability","Refusing to give in to overwhelming emotions","Appreciating what you have and refusing to take it for granted","Seeing the value of long-term commitments"}',
-    '{"Being bored","Daydreaming at the expense of your work","Refusing to be engaged by opportunity","Taking people and relationships for granted","Ignoring romantic or spiritual opportunities","Spurning inspiration","Feeling everything should stay "just like it is""}',
+    '{"Being bored","Daydreaming at the expense of your work","Refusing to be engaged by opportunity","Taking people and relationships for granted","Ignoring romantic or spiritual opportunities","Spurning inspiration","Feeling everything should stay \"just like it is\""}',
     '4 (The Status Quo: stability, equality, persistence)',
     'Moon in Cancer',
     '"I appreciate what I''ve been given."',
-    '{"How can I use this "downtime" to my best advantage?","How can I show my partner that I don''t take him or her for granted?","To what extent is my mood blinding me to new opportunities?"}'
+    '{"How can I use this \"downtime\" to my best advantage?","How can I show my partner that I don''t take him or her for granted?","To what extent is my mood blinding me to new opportunities?"}'
 );
 
 INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Numerology, Astrology, Affirmation, Questions_to_Ask)
@@ -565,7 +506,7 @@ VALUES (
     'c05.jpg',
     '{"A breakup looms","Don''t cry over spilt milk","Take your lumps and get back in the saddle"}',
     '{"loss","despair","re-evaluation","regret","uncertainty","repentance"}',
-    '{"Acknowledging loss and moving on","Focusing on how the glass remains "half-full"","Finding the silver lining in a dark cloud","Recognizing that loss is a natural part of life","Embracing healthy grief","Learning lessons from harsh consequences"}',
+    '{"Acknowledging loss and moving on","Focusing on how the glass remains \"half-full\"","Finding the silver lining in a dark cloud","Recognizing that loss is a natural part of life","Embracing healthy grief","Learning lessons from harsh consequences"}',
     '{"Wallowing in unhealthy grief or self-pity","Refusing to move on and let go","Clinging to the past","Obsessing on past lives and past loves","Failing to live in the present","Beating yourself up over past mistakes","Allowing fear of failure to limit your efforts"}',
     '5 (The Catalyst: instability, resistance, confrontation)',
     'Mars in Scorpio',
@@ -582,7 +523,7 @@ VALUES (
     'c06.jpg',
     '{"A stingy spirit is strangling your enjoyment of life","Loosen up and think of others for once, why don''t you?"}',
     '{"charity","sharing","sacrifice","cooperation","fairness"}',
-    '{"Donating your time and talents to others","Taking satisfaction in knowing how your efforts will aid others","Creating a "win-win" scenario","Giving even when you know repayment is not possible","Being motivated to do a good deed"}',
+    '{"Donating your time and talents to others","Taking satisfaction in knowing how your efforts will aid others","Creating a \"win-win\" scenario","Giving even when you know repayment is not possible","Being motivated to do a good deed"}',
     '{"Linking your sense of self-worth to the appraisals of others","Striving to appear more needy than you really are","Taking undeserved or unmerited charity","Bragging about your charitable efforts","Profiteering in times of distress","Refusing to share a burden"}',
     '6 (The Adjustment: cooperation, collaboration, interaction)',
     'Sun in Scorpio',
@@ -621,7 +562,7 @@ VALUES (
     '8 (The Action: movement, outer work, swiftness)',
     'Saturn in Pisces',
     '"I am always open to opportunities for growth."',
-    '{"What do I need to leave behind once and for all?","If I left in search of \"more,\" what would I be looking for, exactly?","How might a retreat enhance my perspective?"}'
+    '{"What do I need to leave behind once and for all?","If I left in search of \"more\", what would I be looking for, exactly?","How might a retreat enhance my perspective?"}'
 );
 
 INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Numerology, Astrology, Affirmation, Questions_to_Ask)
@@ -655,7 +596,7 @@ VALUES (
     '10 (The End: finality, completion, exhaustion)',
     'Mars in Pisces',
     '"I take time to appreciate what I''ve been given."',
-    '{"Who gets to define what "joy" consists of?","What course of action is available when you feel overwhelmed?","How might vows or promises play a role in achieving a greater level of joy in your life?"}'
+    '{"Who gets to define what \"joy\" consists of?","What course of action is available when you feel overwhelmed?","How might vows or promises play a role in achieving a greater level of joy in your life?"}'
 );
 INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Elemental, Affirmation, Questions_to_Ask)
 VALUES (
@@ -789,7 +730,7 @@ VALUES (
     '4 (The Status Quo: stability, equality, persistence)',
     'Jupiter in Libra',
     '"I think before taking action."',
-    '{"How long has it been since you deliberately took a "time out?"', 'How difficult is it for you to meditate?', 'What would happen if you simply refused to make a decision today?"}'
+    '{"How long has it been since you deliberately took a "time out?""', 'How difficult is it for you to meditate?', 'What would happen if you simply refused to make a decision today?"}'
 );
 -- Insert statement for "Five of Swords"
 INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Numerology, Astrology, Affirmation, Questions_to_Ask)
@@ -1431,8 +1372,9 @@ VALUES (
     '{"Indulging in gluttony or greediness", "Becoming insatiable", "Blunting the impact of treats by indulging in them too often", "Providing physical comfort without providing for emotional needs", "Allowing a feeling of entitlement to distort your gratitude for what you''re given"}',
     'Water of Earth.',
     '"I relish the best this world has to offer."',
-    '{"How do I define luxury?", "To what extent am I capable of reveling in sensual pleasure?", "What would I have to give up in order to \"have it all?\"}'
+    '{"How do I define luxury?", "To what extent am I capable of reveling in sensual pleasure?", "What would I have to give up in order to \"have it all?\""}'
 );
+
 
 -- Insert statement for "King of Pentacles"
 INSERT INTO tarot (name, card_number, arcana, suit, img, fortune_telling, keywords, meanings_light, meanings_shadow, Elemental, Affirmation, Questions_to_Ask)

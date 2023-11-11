@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 //import Dropdown from "./dropdown/Dropdown"
-import Deck from "./cards/Deck"
+import Deck from "./cards/Deck";
 
 function App() {
   // return (
@@ -10,16 +10,10 @@ function App() {
   //     <Deck />
   //   </div>
   // );
-let selectedValue;
-
-  const options = [
-    '1 card spread',
-    '3 card spread',
-    '5 card spread'
-  ];
+  let numCards;
 
   // Create a state variable to track the selected option
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState(1);
 
   // Handle changes in the selected option
   const handleOptionChange = (event) => {
@@ -27,26 +21,27 @@ let selectedValue;
   };
 
   const handleSubmit = (e) => {
-    selectedValue = e.target.value;
-  }
-
-  
+    numCards = e.target.value;
+  };
 
   return (
     <div>
-      <h3>Select an Option:</h3>
-      <select value={selectedOption} onChange={handleOptionChange}>
-        <option value="">Select an option</option>
-        {options.map((option, index) => (
+      <form onSubmit={handleSubmit}>
+        <h3>Select an Option:</h3>
+        <select value={selectedOption} onChange={handleOptionChange}>
+          <option value={1}>1 card spread</option>
+          <option value={3}>3 card spread</option>
+          <option value={5}>5 card spread</option>
+          {/* {options.map((option, index) => (
           <option key={index} value={option}>
             {option}
           </option>
-        ))}
-      </select>
-      <button onClick={handleSubmit}>Submit</button>
-      <Deck selectedValue={selectedValue} />
+        ))} */}
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <Deck numCards={numCards} />
     </div>
-    
   );
 }
 

@@ -5,20 +5,12 @@
   "title": "Tarot Schema",
   "required": [
     "name",
-    "number",
+    "card_number",
     "arcana",
     "suit",
     "img",
     "fortune_telling",
-    "keywords",
-    "meanings-light",
-    "meanings-shadow",
-    "Archetype",
-    "Hebrew Alphabet",
-    "Numerology",
-    "Elemental",
-    "Mythical/Spiritual",
-    "Questions to Ask"
+    "keywords"
   ],
 
     "properties": {
@@ -30,15 +22,14 @@
         "examples": ["The Fool"],
         "pattern": "^(.*)$"
       },
-      "number": {
-        "$id": "#/properties/number",
-        "type": "string",
+      "card_number": {
+        "$id": "#/properties/card_number",
+        "type": "integer",
         "title": "The Number Schema",
         "default": "",
-        "examples": ["0"],
+        "examples": [0],
         "maxLength:": 2,
-        "maximum": 21,
-        "pattern": "^(.*)$"
+        "maximum": 22
       },
       "arcana": {
         "$id": "#/properties/arcana",
@@ -104,7 +95,7 @@
         "examples": ["The Divine Madman"],
         "pattern": "^(.*)$"
       },
-      "Hebrew Alphabet": {
+      "Hebrew_Alphabet": {
         "$id": "#/properties/hebrew_alphabet",
         "type": "string",
         "title": "The Hebrew Alphabet Schema",
@@ -136,7 +127,7 @@
         "examples": ["Adam before the fall."],
         "pattern": "^(.*)$"
       },
-      "Questions to Ask": {
+      "Questions_to_Ask": {
         "$id": "#/properties/questions_to_ask",
         "type": "array",
         "title": "The Questions to Ask Schema",
@@ -150,6 +141,14 @@
         "title": "The Affirmation Schema",
         "default": "",
         "examples": ["I strive to be stable and fair-minded."],
+        "pattern": "^(.*)$"
+      },
+      "Astrology": {
+        "$id": "#/properties/astrology",
+        "type": "string",
+        "title": "The Astrology Schema",
+        "default": "",
+        "examples": ["Mars in Gemini"],
         "pattern": "^(.*)$"
       }
     }
