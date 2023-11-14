@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import CardImg from "./CardImg";
 import "./Deck.css";
 import TarotApi from "../api/api";
+//let tarot_images = require(`../cards_images/${drawnCard.img}`);
+
+
+// for(let tarot_image in tarot_images){
+//  let url = tarot_image.img;
+// }
 
 function shuffleArray(array) {
   const shuffledArray = [...array];
@@ -21,10 +27,10 @@ function Deck() {
     async function getData() {
       try {
         const response = await TarotApi.request("cards");
-        console.log(response)
         if (response) {
-          // shuffleArray(response);
-          setShuffledCards(response);
+          let shuffled = shuffleArray(response);
+          console.log(shuffled)
+          setShuffledCards(shuffled);
         } else {
           console.error("No data received from the API");
         }
@@ -49,12 +55,14 @@ function Deck() {
       throw new Error("No cards left in deck");
     }
 
+
+
     // setDrawnCard((d) => [
     //   ...d,
     //   {
-    //     id: card.id,
-    //     name: card.name,
-    //     image: card.img,
+    //     id: drawn.id,
+    //     name: drawn.name,
+    //     image: drawn.img,
     //   },
     // ]);
   }
@@ -71,6 +79,12 @@ function Deck() {
     );
   }
 
+  function shuffleAlert(){
+    setShuffledCards(shuffleArray(shuffledCards));
+    alert("Shuffled!")
+    console.log(shuffledCards);
+  }
+
   function shuffleBtn() {
     if (!shuffledCards) {
       return null;
@@ -78,19 +92,28 @@ function Deck() {
 
     return (
       <div>
-        <button onClick={() => setShuffledCards(shuffleArray(shuffledCards))}>
+        <button onClick={shuffleAlert}>
           Shuffle
         </button>
       </div>
     );
   }
 
+
+  console.log(drawnCard.img);
+  // shuffledCards.map((c) => {
+  //   let tarot_images = require(`../cards_images/${c.img}`);
+  //   return tarot_images;
+  // })
+ console.log(`../cards_images/${drawnCard.img}`);
   return (
     <div className="Deck">
       <div className="Deck-cardarea">
-        {drawnCard.map((c) => (
-          <CardImg key={c.id} name={c.name} image={c.img} />
-        ))}
+        {/* {drawnCard.map((c) => ( */}
+          <CardImg key={drawnCard.id} name={drawnCard.name} src="https://imgur.com/a/7SIwoVT"/>
+          {/* <img src={tarot_images} alt="card"/> */}
+        {/* ))} */}
+        
       </div>
       {drawBtn()}
       {shuffleBtn()}
