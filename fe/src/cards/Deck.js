@@ -100,18 +100,15 @@ function Deck() {
   }
 
 
-  console.log(drawnCard.img);
   // shuffledCards.map((c) => {
   //   let tarot_images = require(`../cards_images/${c.img}`);
   //   return tarot_images;
   // })
- console.log(`../cards_images/${drawnCard.img}`);
   return (
     <div className="Deck">
       <div className="Deck-cardarea">
         {/* {drawnCard.map((c) => ( */}
-          <CardImg key={drawnCard.id} name={drawnCard.name} src="https://imgur.com/a/7SIwoVT"/>
-          {/* <img src={tarot_images} alt="card"/> */}
+          <CardImg key={drawnCard.id} name={drawnCard.name} image={drawnCard.img}/>
         {/* ))} */}
         
       </div>
