@@ -2,12 +2,6 @@ import React, { useState, useEffect } from "react";
 import CardImg from "./CardImg";
 import "./Deck.css";
 import TarotApi from "../api/api";
-//let tarot_images = require(`../cards_images/${drawnCard.img}`);
-
-
-// for(let tarot_image in tarot_images){
-//  let url = tarot_image.img;
-// }
 
 function shuffleArray(array) {
   const shuffledArray = [...array];
@@ -18,7 +12,7 @@ function shuffleArray(array) {
   return shuffledArray;
 }
 
-function Deck() {
+function Deck(numCards) {
   //let [cards, setCards] = useState([]);
   let [drawnCard, setDrawnCard] = useState([]);
   let [shuffledCards, setShuffledCards] = useState([]);
@@ -29,7 +23,7 @@ function Deck() {
         const response = await TarotApi.request("cards");
         if (response) {
           let shuffled = shuffleArray(response);
-          console.log(shuffled)
+          console.log(shuffled);
           setShuffledCards(shuffled);
         } else {
           console.error("No data received from the API");
@@ -55,8 +49,6 @@ function Deck() {
       throw new Error("No cards left in deck");
     }
 
-
-
     // setDrawnCard((d) => [
     //   ...d,
     //   {
@@ -79,9 +71,9 @@ function Deck() {
     );
   }
 
-  function shuffleAlert(){
+  function shuffleAlert() {
     setShuffledCards(shuffleArray(shuffledCards));
-    alert("Shuffled!")
+    alert("Shuffled!");
     console.log(shuffledCards);
   }
 
@@ -92,25 +84,83 @@ function Deck() {
 
     return (
       <div>
-        <button onClick={shuffleAlert}>
-          Shuffle
-        </button>
+        <button onClick={shuffleAlert}>Shuffle</button>
       </div>
     );
   }
-
-
   // shuffledCards.map((c) => {
   //   let tarot_images = require(`../cards_images/${c.img}`);
   //   return tarot_images;
   // })
+
   return (
     <div className="Deck">
       <div className="Deck-cardarea">
         {/* {drawnCard.map((c) => ( */}
-          <CardImg key={drawnCard.id} name={drawnCard.name} image={drawnCard.img}/>
-        {/* ))} */}
-        
+        <div className="img-area">
+          <CardImg
+            key={drawnCard.id}
+            name={drawnCard.name}
+            image={drawnCard.img}
+          />
+          {/* ))} */}
+        </div>
+
+        {drawnCard.card_number && (
+          <div className="card-info">Card Number: {drawnCard.card_number}</div>
+        )}
+        {drawnCard.suit && (
+          <div className="card-info">Suit: {drawnCard.suit}</div>
+        )}
+        {drawnCard.arcana && (
+          <div className="card-info">Arcana: {drawnCard.arcana}</div>
+        )}
+        {drawnCard.keywords && (
+          <div className="card-info">Keywords: {drawnCard.keywords}</div>
+        )}
+        {drawnCard.archetype && (
+          <div className="card-info">Archetype: {drawnCard.archetype}</div>
+        )}
+        {drawnCard.hebrew_alphabet && (
+          <div className="card-info">Hebrew Alphabet: {drawnCard.suit}</div>
+        )}
+        {drawnCard.astrology && (
+          <div className="card-info">Astrology: {drawnCard.astrology}</div>
+        )}
+        {drawnCard.affirmation && (
+          <div className="card-info">Affirmation: {drawnCard.affirmation}</div>
+        )}
+        {drawnCard.numerology && (
+          <div className="card-info">Numerology: {drawnCard.numerology}</div>
+        )}
+        {drawnCard.fortune_telling && (
+          <div className="card-info">
+            Fortune Telling: {drawnCard.fortune_telling}
+          </div>
+        )}
+        {drawnCard.elemental && (
+          <div className="card-info">Elemental: {drawnCard.elemental}</div>
+        )}
+        {drawnCard.meanings_light && (
+          <div className="card-info">
+            Light Meanings: {drawnCard.meanings_light}
+          </div>
+        )}
+        {drawnCard.meanings_shadow && (
+          <div className="card-info">
+            Shadow Meanings: {drawnCard.meanings_shadow}
+          </div>
+        )}
+        {drawnCard.mythical_spiritual && (
+          <div className="card-info">
+            Mythical/Spiritual: {drawnCard.mythical_spiritual}
+          </div>
+        )}
+        {drawnCard.questions_to_ask && (
+          <div className="card-info">
+            Questions to Ask: {drawnCard.questions_to_ask}
+          </div>
+        )}
       </div>
       {drawBtn()}
       {shuffleBtn()}
