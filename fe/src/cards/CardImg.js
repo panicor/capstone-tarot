@@ -2,15 +2,24 @@ import React from "react";
 import "./CardImg.css";
 
 function CardImg({
-  name = "The Fool",
-  image = "https://i.imgur.com/MC6A1jc.jpg",
+  name,
+  image,
+  showCard=false,
 }) {
-  console.log(image);
+
+  if(image && name){
+    showCard = true;
+  }
+  
+  if (!showCard) {
+    return null; // Don't render anything if showCard is false
+  }
+
   let flip = Math.floor(Math.random() * 2);
   let flipStyle = flip ? { transform: "rotate(180deg)" } : {};
   return (
-    <div>
-      <img className="Card" alt={name} src={image} style={flipStyle} />;
+    <div className="Card">
+      <img className="Card-img" alt={name} src={image} style={flipStyle} />
       {flip ? <p>You drew {name} in reverse</p> : <p>You drew {name}</p>}
     </div>
   );

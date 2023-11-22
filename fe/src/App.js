@@ -26,21 +26,7 @@ function App() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <h3>Select an Option:</h3>
-        <select value={selectedOption} onChange={handleOptionChange}>
-          <option value={1}>1 card spread</option>
-          <option value={3}>3 card spread</option>
-          <option value={5}>5 card spread</option>
-          {/* {options.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
-          </option>
-        ))} */}
-        </select>
-        <button type="submit">Submit</button>
-      </form>
-      <Deck numCards={numCards} />
+      <Deck/>
     </div>
   );
 }

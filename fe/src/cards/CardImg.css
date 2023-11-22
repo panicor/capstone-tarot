@@ -1,0 +1,28 @@
+.Card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for the card image */
+  .Card-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the card text */
+  .Card p {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  /* Style for the reversed card text */
+  .Card p:last-child {
+    color: #ff0000; /* Change color for reversed card text */
+    font-style: italic;
+  }

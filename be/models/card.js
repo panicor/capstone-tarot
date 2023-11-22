@@ -28,6 +28,15 @@ class Card {
 
     if (!tarotRes) throw new NotFoundError(`No cards here`);
     console.log(cards);
+
+    // cards.forEach(card => {
+    //   for (const key in card) {
+    //     if (typeof card[key] === 'string' && card[key].includes(',')) {
+    //       card[key] = card[key].split(',').map(str => str.trim());
+    //     }
+    //   }
+    // });
+
     return cards;
   }
 }
