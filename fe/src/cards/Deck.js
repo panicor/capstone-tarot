@@ -83,11 +83,19 @@ function Deck() {
     );
   }
 
+  const removeQuotesAndBraces = (str) => {
+    const regex = /["{}]/g;
+    return str.replace(regex, '');
+  };
+
   //let iterations = Array.from({ length: numCards }, (_, index) => index);
 
+  console.log(drawnCard);
   return (
     <div className="Deck">
-      <h1 className="header">Welcome to TarotTeacher!</h1>
+      <h1 className="header">Welcome to TarotTeacher</h1>
+      <h2 className="header2">Learn about individual tarot cards to harness the true power of tarot!</h2>
+      <hr></hr>
       <div className="Deck-card-area">
         {drawnCard && (
           <div className="Deck-img-area">
@@ -116,7 +124,10 @@ function Deck() {
           )}
           {drawnCard.keywords && (
             <div className="card-info">
-              <p className="label">Keywords:</p> {drawnCard.keywords}
+              <p className="label">Keywords:</p>
+              {drawnCard.keywords.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
             </div>
           )}
           {drawnCard.archetype && (
@@ -146,8 +157,10 @@ function Deck() {
           )}
           {drawnCard.fortune_telling && (
             <div className="card-info">
-              <p className="label">Fortune Telling:</p>{" "}
-              {drawnCard.fortune_telling}
+              <p className="label">Fortune Telling:</p>
+              {drawnCard.fortune_telling.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
             </div>
           )}
           {drawnCard.elemental && (
@@ -158,25 +171,31 @@ function Deck() {
           {drawnCard.meanings_light && (
             <div className="card-info">
               <p className="label">Light Meanings:</p>
-              {drawnCard.meanings_light}
+              {drawnCard.meanings_light.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
             </div>
           )}
           {drawnCard.meanings_shadow && (
             <div className="card-info">
-              <p className="label">Shadow Meanings:</p>{" "}
-              {drawnCard.meanings_shadow}
+              <p className="label">Shadow Meanings:</p>
+              {drawnCard.meanings_shadow.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
             </div>
           )}
           {drawnCard.mythical_spiritual && (
             <div className="card-info">
-              <p className="label">Mythical/Spiritual:</p>{" "}
-              {drawnCard.mythical_spiritual}
+              <p className="label">Mythical/Spiritual:</p>
+              {removeQuotesAndBraces(drawnCard.mythical_spiritual)}
             </div>
           )}
           {drawnCard.questions_to_ask && (
             <div className="card-info">
-              <p className="label">Questions to Ask:</p>{" "}
-              {drawnCard.questions_to_ask}
+              <p className="label">Questions to Ask:</p>
+              {drawnCard.questions_to_ask.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
             </div>
           )}
         </div>

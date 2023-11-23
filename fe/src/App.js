@@ -10,19 +10,19 @@ function App() {
   //     <Deck />
   //   </div>
   // );
-  let numCards;
+  // let numCards;
 
-  // Create a state variable to track the selected option
-  const [selectedOption, setSelectedOption] = useState(1);
+  // // Create a state variable to track the selected option
+  // const [selectedOption, setSelectedOption] = useState(1);
 
-  // Handle changes in the selected option
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+  // // Handle changes in the selected option
+  // const handleOptionChange = (event) => {
+  //   setSelectedOption(event.target.value);
+  // };
 
-  const handleSubmit = (e) => {
-    numCards = e.target.value;
-  };
+  // const handleSubmit = (e) => {
+  //   numCards = e.target.value;
+  // };
 
   return (
     <div>

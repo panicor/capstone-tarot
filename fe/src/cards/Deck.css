@@ -6,6 +6,12 @@
     text-align: center;
 }
 
+.header2 {
+    color: black; /* Text color */
+    font-size: 18px; /* Font size */
+    text-align: center;
+}
+
 .Deck {
     font-family: Arial, sans-serif;
     padding: 20px;

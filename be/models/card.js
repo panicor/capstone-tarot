@@ -31,8 +31,10 @@ class Card {
 
     // cards.forEach(card => {
     //   for (const key in card) {
-    //     if (typeof card[key] === 'string' && card[key].includes(',')) {
-    //       card[key] = card[key].split(',').map(str => str.trim());
+    //     if (typeof card[key] === 'array') {
+    //       for(let item in card[key]){
+    //         return item;
+    //       }
     //     }
     //   }
     // });
