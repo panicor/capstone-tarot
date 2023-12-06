@@ -25,20 +25,23 @@ To run TarotTeacher locally or in a development environment, follow these steps:
    ```
 
 2. Navigate to the project directory:
-
+   ```
    cd tarot
+   ```
 
 3. Install dependencies for both frontend and backend:
 
    # Install frontend dependencies
 
-   ```cd fe
+   ```
+   cd fe
    npm install
    ```
 
    # Install backend dependencies
 
-   ```cd ../be
+   ```
+   cd ../be
    npm install
    ```
 
@@ -46,7 +49,8 @@ To run TarotTeacher locally or in a development environment, follow these steps:
 
     # Start the backend server
 
-    ```cd ../be
+    ```
+    cd ../be
     node server.js
     ```
 
@@ -54,7 +58,8 @@ To run TarotTeacher locally or in a development environment, follow these steps:
 
     # Start the frontend
 
-    ```cd ../fe
+    ```
+    cd ../fe
     npm start
     ```
 
