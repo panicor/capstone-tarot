@@ -3,6 +3,7 @@ import CardImg from "./CardImg";
 import "./Deck.css";
 import TarotApi from "../api/api";
 
+//Fischer-Yates algorithm for shuffling
 function shuffleArray(array) {
   const shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {

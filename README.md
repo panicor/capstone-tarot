@@ -1,18 +1,77 @@
+# TarotTeacher
+
+TarotTeacher is a full-stack web application designed to provide education on individual tarot cards. Built with React.js, Node.js, Express, and PostgreSQL, this application allows users to explore the mystical world of tarot cards and delve into the meanings behind the cards.
+
+## Features
+
+- **Card Interpretations**: Discover the significance and interpretations of individual tarot cards.
+- **User-Friendly Interface**: A sleek interface that offers an immersive experience.
+
+## Technologies Used
+
+- **Frontend**: React.js, HTML, CSS
+- **Backend**: Node.js, Express
+- **Data Storage**: PostgreSQL
+
+## Getting Started
+
+To run TarotTeacher locally or in a development environment, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/TarotTeacher.git
+
+   ```
+
+2. Navigate to the project directory:
+
+   cd tarot
+
+3. Install dependencies for both frontend and backend:
+
+   # Install frontend dependencies
+
+   cd fe
+   npm install
+
+   # Install backend dependencies
+
+   cd ../be
+   npm install
+
+4. Start the server:
+
+    # Start the backend server
+
+    cd ../be
+    node server.js
+
+5. Run the frontend:
+
+    # Start the frontend
+
+    cd ../fe
+    npm start
+
+6. Open your browser and visit http://localhost:3000 to access the TarotTeacher application.
+
+
+# Contributing
+
+Contributions are welcome! If you'd like to contribute to TarotTeacher, please follow these steps:
+
+1. Fork the repository.
+2. Create your feature branch (git checkout -b feature/AmazingFeature).
+3. Commit your changes (git commit -m 'Add some AmazingFeature').
+4. Push to the branch (git push origin feature/AmazingFeature).
+5. Open a pull request.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ### `npm test`
 
@@ -44,27 +103,3 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

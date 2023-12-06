@@ -13,13 +13,13 @@ if (process.env.NODE_ENV === "production") {
 } else {
   db = new Client({
     host: "localhost",
-    // user: "testing1",
     port: 5432,
-    // password: "testingpassword1",
     database: "tarot_db"
   });
 }
 
+
+//connect to db
 db.connect();
 
 module.exports = db;

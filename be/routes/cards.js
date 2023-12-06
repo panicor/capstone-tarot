@@ -6,9 +6,10 @@ const tarotSchema = require("../schemas/tarotSchema.json");
 
 const router = express.Router({ mergeParams: true });
 
+//gets all cards when page loads
 router.get("/", async (req, res, next) => {
   try {
-    // Make a request to your external API endpoint
+    // Make a request to external API endpoint
     const response = await Card.getAllCards();
 
     // Check if the API request was successful
@@ -40,6 +41,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+//gets card based on id
 router.get("/:id", async (req, res, next) => {
   try {
     let card = await Card.getCard(req.params.id);
