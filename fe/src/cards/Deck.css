@@ -1,72 +1,83 @@
 /* Style for the main container */
 .header {
-    color: #3366ff; /* Text color */
-    font-size: 36px; /* Font size */
-    font-weight: bold; /* Font weight */
-    text-align: center;
+  color: #3366ff; /* Text color */
+  font-size: 36px; /* Font size */
+  font-weight: bold; /* Font weight */
+  text-align: center;
 }
 
 .header2 {
-    color: black; /* Text color */
-    font-size: 18px; /* Font size */
-    text-align: center;
+  color: black; /* Text color */
+  font-size: 18px; /* Font size */
+  text-align: center;
 }
 
 .Deck {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 20px auto;
-    max-width: 80%;
-    background-color: #f8f8f8;
-  }
-  
-  /* Style for the card area */
-  .Deck-card-area {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  /* Style for the image area */
-  .Deck-img-area {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  /* Style for the card info area */
-  .Deck-card-info-area {
-    flex: 1;
-  }
-  
-  /* Style for the card info */
-  .card-info {
-    margin-bottom: 10px;
-  }
-  
-  /* Style for the label */
-  .label {
-    font-weight: bold;
-  }
-  
-  /* Style for the button container */
-  .btns {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  /* Style for the button */
-  .Deck-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover effect for the button */
-  .Deck-btn:hover {
-    background-color: #0056b3;
-  }
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 80%;
+  background-color: #f8f8f8;
+}
+
+/* Style for the card area */
+.Deck-card-area {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* Style for the image area */
+.Deck-img-area {
+  flex: 1;
+  margin-right: 20px;
+  width: 4rem;
+  height: 40rem;
+}
+
+/* Style for the card info area */
+.Deck-card-info-area {
+  width: 4rem;
+  height: 40rem;
+  flex: 1;
+  overflow: auto;
+}
+
+/* Style for the card info */
+.card-info {
+  margin-bottom: 10px;
+}
+
+/* Style for the label */
+.label {
+  font-weight: bold;
+}
+
+/* Style for the button container */
+.btns {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Style for the button */
+.Deck-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.Deck-btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: center;
+}

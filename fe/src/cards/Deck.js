@@ -86,7 +86,7 @@ function Deck() {
 
   const removeQuotesAndBraces = (str) => {
     const regex = /["{}]/g;
-    return str.replace(regex, '');
+    return str.replace(regex, "");
   };
 
   //let iterations = Array.from({ length: numCards }, (_, index) => index);
@@ -95,8 +95,14 @@ function Deck() {
   return (
     <div className="Deck">
       <h1 className="header">Welcome to TarotTeacher</h1>
-      <h2 className="header2">Learn about individual tarot cards to harness the true power of tarot!</h2>
+      <h2 className="header2">
+        Learn about individual tarot cards to harness the true power of tarot!
+      </h2>
       <hr></hr>
+      <div class="btn-area">
+        <div className="btns">{drawBtn()}</div>
+        <div className="btns">{shuffleBtn()}</div>
+      </div>
       <div className="Deck-card-area">
         {drawnCard && (
           <div className="Deck-img-area">
@@ -201,8 +207,6 @@ function Deck() {
           )}
         </div>
       </div>
-      <div className="btns">{drawBtn()}</div>
-      <div className="btns">{shuffleBtn()}</div>
     </div>
   );
 }
